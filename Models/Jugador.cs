@@ -5,13 +5,10 @@ public class Jugador
 {
     public int IdJugador { get; set; }
     public string Usuario { get; set; }
-    public string Email { get; set; }
-    public string Clave { get; set; }
-    public DateTime FechaRegistro { get; set; }
-    public int Progreso { get; set; }
+    public string Clave { get; set; }    
     public string Nombre { get; set; }
     public string Apellido { get; set; }
-    public Jugador(int idJugador, string usuario, string email, string clave, DateTime fechaRegistro, int progreso, string nombre, string apellido)
+    public Jugador(int idJugador, string usuario, string email, string clave, string nombre, string apellido)
     {
         IdJugador = idJugador;
         Usuario = usuario;
