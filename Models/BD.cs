@@ -4,5 +4,5 @@ using Dapper;
 public class BD
 {
  private string conexion = @"Server=localhost;DataBase=TP06; Integrated Security=True; TrustServerCertificate=True;";
- public List traerLista ()
+ 
 }
