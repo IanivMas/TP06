@@ -1,0 +1,22 @@
+@{
+    ViewData["Title"] = "Pagina Principal";
+}
+<p>Te damos la bienvenida a nuestra sala especializada en hardware @ViewBag.Nombre.</p>
+
+<h2>¿Qué encontrarás aquí?</h2>
+<p>En esta sala puedes:</p>
+<ul>
+    <li>Aprender sobre componentes de hardware</li>
+    <li>Explorar nuevas tecnologías</li>
+    <li>Compartir conocimientos con otros entusiastas</li>
+    <li>Resolver problemas técnicos</li>
+</ul>
+
+<h2>Nuestros Servicios</h2>
+<p>Disponemos de equipos, herramientas y expertos para ayudarte con cualquier necesidad relacionada con hardware.
+</p>
+
+<p>¡Comienza tu experiencia ahora!</p>
+<form action="@Url.Action("CerrarSesion", "Home")" method="post">
+    <input type="submit" name="cerrarSesion" value="Cerrar sesión" />
+</form>

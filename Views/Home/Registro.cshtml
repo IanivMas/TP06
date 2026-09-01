@@ -1,0 +1,36 @@
+@{
+    ViewData["Title"] = "Registro";
+}
+
+<h1>Registro de Jugador</h1>
+
+<form action="@Url.Action("Registro", "Home")" method="post">
+    <div>
+        <label for="nombre">Nombre</label>
+        <input type="text" id="nombre" name="Nombre" placeholder="Ingrese su nombre" required/>
+    </div>
+
+    <div>
+        <label for="apellido">Apellido</label>
+        <input type="text" id="apellido" name="Apellido" placeholder="Ingrese su apellido" required/>
+    </div>
+
+    <div>
+        <label for="email">Email</label>
+        <input type="email" id="email" name="Email" placeholder="Ingrese su email" required/>
+    </div>
+
+    <div>
+        <label for="usuario">Usuario</label>
+        <input type="text" id="usuario" name="Usuario" placeholder="Ingrese su usuario" required/>
+    </div>
+
+    <div>
+        <label for="clave">Contraseña</label>
+        <input type="password" id="clave" name="Clave" placeholder="Ingrese su contraseña" required/>
+    </div>
+
+    <button type="submit">Registrarse</button>
+</form>
+
+<p>¿Ya tienes cuenta? <a href="@Url.Action("InicioSesion", "Home")">Inicia sesión aquí</a></p>
