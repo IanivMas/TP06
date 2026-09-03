@@ -17,6 +17,14 @@
 </p>
 
 <p>¡Comienza tu experiencia ahora!</p>
+@foreach (var sala in ViewBag.Salas)
+{
+    <div>
+        <a href="@Url.Action("Sala1", "Home")">@sala.Nombre</a>
+    </div>
+}
+
+<a href="@Url.Action("ListadoSalas", "Home", new {})">Empezar</a>
 <form action="@Url.Action("CerrarSesion", "Home")" method="post">
     <input type="submit" name="cerrarSesion" value="Cerrar sesión" />
 </form>

@@ -7,7 +7,7 @@ public class BD
     private string conexion = @"Server=localhost;DataBase=TP06; Integrated Security=True; TrustServerCertificate=True;";
     public void agregarJugador(Jugador j)
     {
-        string query = "INSERT INTO Jugador (Nombre,Apellido,Usuario,Clave,Email,Vidas,Progreso) VALUES (@Nombre,@Apellido,@Usuario,@Clave,@Tipo,@Email,@Vidas,@Progreso)";
+        string query = "INSERT INTO Jugador (Nombre,Apellido,Usuario,Clave,Email,Vidas,Progreso) VALUES (@Nombre,@Apellido,@Usuario,@Clave,@Email,@Vidas,@Progreso)";
         using (SqlConnection connection = new SqlConnection(conexion))
         {
             connection.Execute(query, new { Nombre = j.Nombre, Apellido = j.Apellido, Usuario = j.Usuario, Clave = j.Clave, Email = j.Email, Vidas = j.Vidas, Progreso = j.Progreso });
@@ -29,6 +29,23 @@ public class BD
         using (SqlConnection connection = new SqlConnection(conexion))
         {
             return connection.Query<Sala>(query).ToList();
+        }
+    }
+     public Jugador encontrarUsuario(string Usuario, string Clave)
+    {
+        string query = "SELECT IdJugador, Nombre, Apellido, Usuario, Clave, Email FROM Jugador WHERE Usuario = @Usuario AND clave = @Clave";
+        using (SqlConnection connection = new SqlConnection(conexion))
+        {
+            return connection.QueryFirstOrDefault<Jugador>(query, new { Usuario, Clave });
+        }
+    }
+
+    public Jugador buscarPorNombreUsuario(string Usuario)
+    {
+        string query = "SELECT Nombre, Apellido, Usuario, Clave, Email FROM Jugador WHERE usuario = @Usuario";
+        using (SqlConnection connection = new SqlConnection(conexion))
+        {
+            return connection.QueryFirstOrDefault<Jugador>(query, new { Usuario });
         }
     }
 }

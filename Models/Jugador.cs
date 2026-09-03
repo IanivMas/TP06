@@ -22,4 +22,8 @@ public class Jugador
         Progreso = 0;
         Apellido = apellido;
     }
+      public Jugador()
+    {
+        
+    }
 }
