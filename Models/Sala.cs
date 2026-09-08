@@ -7,16 +7,17 @@ using Dapper;
         public string NombreSala { get; set; }
         public int Nivel { get; set; }
         public bool Estado { get; set; }
-        public int IdJugador { get; set; }
-        public bool Correcta { get; set; }
+        public string Correcta { get; set; }
 
-        public Sala(int salaId, string nombreSala,int nivel, bool estado, int idJugador, bool correcta)
+        public Sala(int salaId, string nombreSala, int nivel, bool estado, string correcta)
         {
             SalaId = salaId;
             NombreSala = nombreSala;
             Nivel = nivel;
             Estado = estado;
-            IdJugador = idJugador;
             Correcta = correcta;
+        }
+        public Sala()
+        {
         }
     }

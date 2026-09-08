@@ -19,6 +19,18 @@ public class HomeController : Controller
         return View();
     }
 
+    [HttpGet]
+    public IActionResult Registro()
+    {
+        return View();
+    }
+
+    [HttpGet]
+    public IActionResult InicioSesion()
+    {
+        return View();
+    }
+
     [HttpPost]
     public IActionResult Registro(string Nombre, string Apellido, string Email, string Usuario, string Clave, int id)
     {
@@ -32,7 +44,7 @@ public class HomeController : Controller
         else
         {
             ViewBag.error = "El nombre de usuario ya existe.";
-            return RedirectToAction("Registro", "Home");
+            return RedirectToAction("InicioSesion", "Home");
         }
     
     }
@@ -69,12 +81,13 @@ public IActionResult InicioSesion(string Usuario, string Clave)
         ViewBag.Salas = bd.ObtenerSalas();
         return View();
     }
-    public IActionResult ListadoSalas ()
-    {
-        BD bd = new BD();
-1       ViewBag.Salas = bd.ObtenerSalas();
-        return View();
-    }
+    public IActionResult Sala(int id)
+{
+    string nombreVista = "Sala" + id;
+
+    return View(nombreVista);
+}
+
     public IActionResult Privacy()
     {
         return View();
