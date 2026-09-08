@@ -2,23 +2,39 @@
     ViewBag.Title = "Sala 7 - Nivel 7";
 }
 
-<h1>🔐 Nivel 7 — El código final 🏆</h1>
+<div class="room-shell">
+    <div class="room-card">
+        <div class="room-header">
+            <span class="room-label">Nivel final</span>
+            <h1 class="room-title">🔐 El código final 🏆</h1>
+        </div>
 
-<p>Para completar el último nivel, juntá lo que obtuviste en cada habitación:</p>
+        <div class="room-content">
+            <div class="room-section">
+                <p>Para completar el último nivel, juntá lo que obtuviste en cada habitación:</p>
 
-<ul>
-    <li>Nivel 1 → SSD</li>
-    <li>Nivel 2 → 16</li>
-    <li>Nivel 3 → RJ45</li>
-    <li>Nivel 4 → B</li>
-    <li>Nivel 5 → CPU</li>
-    <li>Nivel 6 → FUENTE</li>
-</ul>
+                <ul>
+                    <li>Nivel 1 → SSD</li>
+                    <li>Nivel 2 → 16</li>
+                    <li>Nivel 3 → RJ45</li>
+                    <li>Nivel 4 → B</li>
+                    <li>Nivel 5 → CPU</li>
+                    <li>Nivel 6 → FUENTE</li>
+                </ul>
+            </div>
 
-<p>Escribí el código final con guiones:</p>
+            <div class="room-section">
+                <p>Escribí el código final con guiones:</p>
 
-<input type="text" id="codigoFinal" placeholder="SSD-16-RJ45-B-CPU-FUENTE" />
-<button type="button" onclick="">Comprobar</button>
+                <input type="text" id="codigoFinal" class="room-input" placeholder="SSD-16-RJ45-B-CPU-FUENTE" />
+                <div class="room-actions">
+                    <button type="button" class="room-button" onclick="">Comprobar</button>
+                </div>
+                <p id="resultado" class="room-result"></p>
+            </div>
+        </div>
+    </div>
 
-<p id="resultado"></p>
+    <a class="room-back" href="@Url.Action("PaginaPrincipal", "Home")">← Volver a la página principal</a>
+</div>
 

@@ -2,25 +2,42 @@
     ViewData["Title"] = "Nivel 4 - Sala de Escape";
 }
 
-<div>
-    <h1>🔐 Nivel 4 — El procesador</h1>
-    
-    <h2>Historia</h2>
-    <p>La computadora está encendida, pero aparece un mensaje en la pantalla:</p>
-    <p>"El procesador está funcionando a una temperatura demasiado alta."</p>
-    
-    <h2>Posibles soluciones</h2>
-    <ul>
-        <li>A. Agregar más almacenamiento</li>
-        <li>B. Mejorar la refrigeración</li>
-        <li>C. Cambiar el monitor</li>
-    </ul>
-    
-    <h2>La Pregunta</h2>
-    <p>¿Cuál es la solución correcta?</p>
-    
-    <input type="text" placeholder="Escribe tu respuesta aquí">
-    <button>Verificar Respuesta</button>
-    
-    <p>Pista: El problema está relacionado con la temperatura, no con el almacenamiento ni la visualización.</p>
+<div class="room-shell">
+    <div class="room-card">
+        <div class="room-header">
+            <span class="room-label">Nivel 4</span>
+            <h1 class="room-title">🔐 El procesador</h1>
+        </div>
+
+        <div class="room-content">
+            <div class="room-section">
+                <h2>Historia</h2>
+                <p>La computadora está encendida, pero aparece un mensaje en la pantalla:</p>
+                <p>"El procesador está funcionando a una temperatura demasiado alta."</p>
+            </div>
+
+            <div class="room-section">
+                <h2>Posibles soluciones</h2>
+                <ul>
+                    <li>A. Agregar más almacenamiento</li>
+                    <li>B. Mejorar la refrigeración</li>
+                    <li>C. Cambiar el monitor</li>
+                </ul>
+            </div>
+
+            <div class="room-section">
+                <h2>La Pregunta</h2>
+                <p>¿Cuál es la solución correcta?</p>
+
+                <input type="text" class="room-input" placeholder="Escribe tu respuesta aquí">
+                <div class="room-actions">
+                    <button class="room-button">Verificar Respuesta</button>
+                </div>
+            </div>
+
+            <p class="room-tip">Pista: El problema está relacionado con la temperatura, no con el almacenamiento ni la visualización.</p>
+        </div>
+    </div>
+
+    <a class="room-back" href="@Url.Action("PaginaPrincipal", "Home")">← Volver a la página principal</a>
 </div>

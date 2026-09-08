@@ -1,30 +1,54 @@
 @{
     ViewData["Title"] = "Pagina Principal";
 }
-<p>Te damos la bienvenida a nuestra sala especializada en hardware @ViewBag.Nombre.</p>
 
-<h2>¿Qué encontrarás aquí?</h2>
-<p>En esta sala puedes:</p>
-<ul>
-    <li>Aprender sobre componentes de hardware</li>
-    <li>Explorar nuevas tecnologías</li>
-    <li>Compartir conocimientos con otros entusiastas</li>
-    <li>Resolver problemas técnicos</li>
-</ul>
+<div class="dashboard-shell">
+    <div class="dashboard-card">
+        <div class="dashboard-header">
+            <span class="dashboard-badge">Hardware Lab</span>
+            <h1 class="dashboard-title">Bienvenido a la Sala de Hardware</h1>
+        </div>
 
-<h2>Nuestros Servicios</h2>
-<p>Disponemos de equipos, herramientas y expertos para ayudarte con cualquier necesidad relacionada con hardware.
-</p>
+        <div class="dashboard-content">
+            <div class="dashboard-welcome">
+                <p>Te damos la bienvenida a nuestra sala especializada en hardware <strong>@ViewBag.Nombre</strong>.</p>
+            </div>
 
-<p>¡Comienza tu experiencia ahora!</p>
-@foreach (var sala in ViewBag.Salas)
-{
-    <div>
-        <a href="@Url.Action("Sala", "Home", new { id = sala.SalaId })">
-            @sala.NombreSala
-        </a>
+            <div class="dashboard-section">
+                <h2>¿Qué encontrarás aquí?</h2>
+                <p>En esta sala puedes:</p>
+                <ul>
+                    <li>Aprender sobre componentes de hardware</li>
+                    <li>Explorar nuevas tecnologías</li>
+                    <li>Compartir conocimientos con otros entusiastas</li>
+                    <li>Resolver problemas técnicos</li>
+                </ul>
+            </div>
+
+            <div class="dashboard-section">
+                <h2>Nuestros Servicios</h2>
+                <p>Disponemos de equipos, herramientas y expertos para ayudarte con cualquier necesidad relacionada con hardware.</p>
+            </div>
+
+            <div class="dashboard-section">
+                <h2>Comienza tu experiencia ahora</h2>
+                <div class="sala-list">
+                    @foreach (var sala in ViewBag.Salas)
+                    {
+                        <div class="sala-item">
+                            <a href="@Url.Action("Sala", "Home", new { id = sala.SalaId })">
+                                @sala.NombreSala
+                            </a>
+                        </div>
+                    }
+                </div>
+            </div>
+
+            <div class="dashboard-actions">
+                <form action="@Url.Action("CerrarSesion", "Home")" method="post">
+                    <input type="submit" name="cerrarSesion" value="Cerrar sesión" />
+                </form>
+            </div>
+        </div>
     </div>
-}
-<form action="@Url.Action("CerrarSesion", "Home")" method="post">
-    <input type="submit" name="cerrarSesion" value="Cerrar sesión" />
-</form>
+</div>

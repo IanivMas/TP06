@@ -2,19 +2,27 @@
     ViewData["Title"] = "Inicio de Sesión";
 }
 
-<h1>Iniciar Sesión</h1>
+<div class="auth-shell">
+    <div class="auth-card">
+        <div class="auth-header">
+            <span class="auth-badge">Acceso</span>
+            <h1 class="auth-title">Iniciar Sesión</h1>
+        </div>
 
-<form action="@Url.Action("InicioSesion", "Home")" method="post">
-    <div>
-        <label for="usuario">Usuario</label>
-        <input type="text" id="usuario" name="Usuario" placeholder="Ingrese su usuario" required/>
+        <form action="@Url.Action("InicioSesion", "Home")" method="post" class="auth-form">
+            <div>
+                <label for="usuario">Usuario</label>
+                <input type="text" id="usuario" name="Usuario" placeholder="Ingrese su usuario" required />
+            </div>
+
+            <div>
+                <label for="clave">Contraseña</label>
+                <input type="password" id="clave" name="Clave" placeholder="Ingrese su contraseña" required />
+            </div>
+
+            <button type="submit">Iniciar Sesión</button>
+        </form>
+
+        <p class="auth-switch">¿No tienes cuenta? <a href="@Url.Action("Registro", "Home")">Registrarse</a></p>
     </div>
-
-    <div>
-        <label for="clave">Contraseña</label>
-        <input type="password" id="clave" name="Clave" placeholder="Ingrese su contraseña" required/>
-    </div>
-
-    <button type="submit">Iniciar Sesión</button>
-</form>
-<p>¿No tienes cuenta? <a href="@Url.Action("Registro", "Home")">Registrarse</a></p>
+</div>

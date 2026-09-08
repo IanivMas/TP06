@@ -2,19 +2,33 @@
     ViewData["Title"] = "Nivel 5 - Sala de Escape";
 }
 
-<div>
-    <h1>🔐 Nivel 5 — ¿Qué componente es?</h1>
-    
-    <h2>El Acertijo</h2>
-    <p>En esta habitación encuentras una descripción misteriosa:</p>
-    
-    <p>"Soy el componente que se encarga de realizar los cálculos y ejecutar las instrucciones de los programas. Muchos me llaman el cerebro de la computadora."</p>
-    
-    <h2>La Pregunta</h2>
-    <p>¿Quién soy?</p>
-    
-    <input type="text" placeholder="Escribe tu respuesta aquí">
-    <button>Verificar Respuesta</button>
-    
-    <p>Pista: Sin mí, la computadora no puede pensar ni tomar decisiones.</p>
+<div class="room-shell">
+    <div class="room-card">
+        <div class="room-header">
+            <span class="room-label">Nivel 5</span>
+            <h1 class="room-title">🔐 ¿Qué componente es?</h1>
+        </div>
+
+        <div class="room-content">
+            <div class="room-section">
+                <h2>El Acertijo</h2>
+                <p>En esta habitación encuentras una descripción misteriosa:</p>
+                <p>"Soy el componente que se encarga de realizar los cálculos y ejecutar las instrucciones de los programas. Muchos me llaman el cerebro de la computadora."</p>
+            </div>
+
+            <div class="room-section">
+                <h2>La Pregunta</h2>
+                <p>¿Quién soy?</p>
+
+                <input type="text" class="room-input" placeholder="Escribe tu respuesta aquí">
+                <div class="room-actions">
+                    <button class="room-button">Verificar Respuesta</button>
+                </div>
+            </div>
+
+            <p class="room-tip">Pista: Sin mí, la computadora no puede pensar ni tomar decisiones.</p>
+        </div>
+    </div>
+
+    <a class="room-back" href="@Url.Action("PaginaPrincipal", "Home")">← Volver a la página principal</a>
 </div>

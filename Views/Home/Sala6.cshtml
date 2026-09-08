@@ -2,21 +2,38 @@
     ViewData["Title"] = "Nivel 6 - Sala de Escape";
 }
 
-<div>
-    <h1>🔐 Nivel 6 — La fuente</h1>
-    
-    <h2>Historia</h2>
-    <p>La PC no enciende absolutamente nada.</p>
-    <p>Nada de luces, nada de sonidos, nada de actividad.</p>
-    
-    <h2>La Pista</h2>
-    <p>Todos los componentes están correctamente conectados, pero ninguno recibe energía.</p>
-    
-    <h2>La Pregunta</h2>
-    <p>¿Qué componente deberías revisar primero?</p>
-    
-    <input type="text" placeholder="Escribe tu respuesta aquí">
-    <button>Verificar Respuesta</button>
-    
-    <p>Pista adicional: Sin este componente, nadie más puede funcionar.</p>
+<div class="room-shell">
+    <div class="room-card">
+        <div class="room-header">
+            <span class="room-label">Nivel 6</span>
+            <h1 class="room-title">🔐 La fuente</h1>
+        </div>
+
+        <div class="room-content">
+            <div class="room-section">
+                <h2>Historia</h2>
+                <p>La PC no enciende absolutamente nada.</p>
+                <p>Nada de luces, nada de sonidos, nada de actividad.</p>
+            </div>
+
+            <div class="room-section">
+                <h2>La Pista</h2>
+                <p>Todos los componentes están correctamente conectados, pero ninguno recibe energía.</p>
+            </div>
+
+            <div class="room-section">
+                <h2>La Pregunta</h2>
+                <p>¿Qué componente deberías revisar primero?</p>
+
+                <input type="text" class="room-input" placeholder="Escribe tu respuesta aquí">
+                <div class="room-actions">
+                    <button class="room-button">Verificar Respuesta</button>
+                </div>
+            </div>
+
+            <p class="room-tip">Pista adicional: Sin este componente, nadie más puede funcionar.</p>
+        </div>
+    </div>
+
+    <a class="room-back" href="@Url.Action("PaginaPrincipal", "Home")">← Volver a la página principal</a>
 </div>
