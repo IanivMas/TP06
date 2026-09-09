@@ -82,12 +82,23 @@ public IActionResult InicioSesion(string Usuario, string Clave)
         return View();
     }
     public IActionResult Sala(int id)
-{
+    {
     string nombreVista = "Sala" + id;
 
     return View(nombreVista);
-}
-
+    }
+     public IActionResult ComprobarRespuesta(int ID, string respuesta)
+     {
+        Sala sala = bd.ObtenerSala(ID);
+        if(sala.correcta = respuesta)
+        {
+            bd.actualizarEstado(ID);
+        }
+        else
+        {
+            
+        }
+     }
     public IActionResult Privacy()
     {
         return View();

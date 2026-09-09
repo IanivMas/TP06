@@ -48,4 +48,12 @@ public class BD
             return connection.QueryFirstOrDefault<Jugador>(query, new { Usuario });
         }
     }
+    public Sala actualizarEstado(int id)
+    {
+        string query = "UPDATE Sala SET Estado = 0 WHERE SalaId = @id";
+        using (SqlConnection connection = new SqlConnection(conexion))
+        {
+            return connection.QueryFirstOrDefault<Sala>(query, new { id });
+        }
+    }
 }

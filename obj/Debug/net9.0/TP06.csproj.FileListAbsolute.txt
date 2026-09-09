@@ -139,4 +139,4 @@ C:\Users\49836040\TP06\obj\Debug\net9.0\refint\TP06.dll
 C:\Users\49836040\TP06\obj\Debug\net9.0\TP06.pdb
 C:\Users\49836040\TP06\obj\Debug\net9.0\TP06.genruntimeconfig.cache
 C:\Users\49836040\TP06\obj\Debug\net9.0\ref\TP06.dll
-C:\Users\49836040\TP06\obj\Debug\net9.0\compressed\7knrewp0mc-to60ebfy70.gz
+C:\Users\49836040\TP06\obj\Debug\net9.0\compressed\7knrewp0mc-sat1okol1y.gz
