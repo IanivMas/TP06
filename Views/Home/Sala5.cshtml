@@ -19,11 +19,15 @@
             <div class="room-section">
                 <h2>La Pregunta</h2>
                 <p>¿Quién soy?</p>
+              <form action="@Url.Action("ComprobarRespuesta", "Home")" method="post">
+    <input type="hidden" name="ID" value="5">
 
-                <input type="text" class="room-input" placeholder="Escribe tu respuesta aquí">
-                <div class="room-actions">
-                    <button class="room-button">Verificar Respuesta</button>
-                </div>
+    <input type="text" name="respuesta" class="room-input" placeholder="Escribe tu respuesta aquí">
+
+    <div class="room-actions">
+        <button type="submit" class="room-button">Verificar Respuesta</button>
+    </div>
+</form>
             </div>
 
             <p class="room-tip">Pista: Sin mí, la computadora no puede pensar ni tomar decisiones.</p>

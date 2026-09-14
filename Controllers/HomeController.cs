@@ -119,7 +119,6 @@ public IActionResult ComprobarRespuesta(int ID, string respuesta)
     if (sala.Correcta == respuesta)
     {
         bd.actualizarEstado(ID);
-
         return RedirectToAction("PaginaPrincipal", "Home");
     }
     else
@@ -127,22 +126,22 @@ public IActionResult ComprobarRespuesta(int ID, string respuesta)
         return RedirectToAction("Sala", "Home", new { id = ID });
     }
 }
-public IActionResult Victoria(int id, string respuesta)
+[HttpPost]
+    public IActionResult Victoria(string respuesta)
 {
     BD bd = new BD();
-
-    Sala sala = bd.ObtenerSala(id);
-
+    Sala sala = bd.ObtenerSala(7);
     if (sala.Correcta == respuesta)
     {
-        bd.actualizarEstado(id);
-        return RedirectToAction("Victoria", "Home");
+        return View("Victoria");
     }
     else
     {
-        return RedirectToAction("Sala", new { id = id });
+        return RedirectToAction("Sala", "Home", new { id = 7 });
     }
 }
+
+
 
     public IActionResult CerrarSesion()
     {

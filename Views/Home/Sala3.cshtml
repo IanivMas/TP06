@@ -31,11 +31,15 @@
 
                 <h2>La Pregunta</h2>
                 <p>¿Qué conector tenés que utilizar?</p>
+               <form action="@Url.Action("ComprobarRespuesta", "Home")" method="post">
+    <input type="hidden" name="ID" value="3">
 
-                <input type="text" class="room-input" placeholder="Escribe tu respuesta aquí">
-                <div class="room-actions">
-                    <button class="room-button">Verificar Respuesta</button>
-                </div>
+    <input type="text" name="respuesta" class="room-input" placeholder="Escribe tu respuesta aquí">
+
+    <div class="room-actions">
+        <button type="submit" class="room-button">Verificar Respuesta</button>
+    </div>
+</form>
             </div>
 
             <p class="room-tip">Pista adicional: Este conector es específico para conexiones de red con cable.</p>

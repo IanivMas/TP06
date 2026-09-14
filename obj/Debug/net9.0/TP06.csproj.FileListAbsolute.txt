@@ -67,7 +67,6 @@ C:\Users\49836040\TP06\obj\Debug\net9.0\scopedcss\Views\Shared\_Layout.cshtml.rz
 C:\Users\49836040\TP06\obj\Debug\net9.0\scopedcss\bundle\TP06.styles.css
 C:\Users\49836040\TP06\obj\Debug\net9.0\scopedcss\projectbundle\TP06.bundle.scp.css
 C:\Users\49836040\TP06\obj\Debug\net9.0\compressed\l424khjmqo-61n19gt1b8.gz
-C:\Users\49836040\TP06\obj\Debug\net9.0\compressed\myogmasy63-xtxxf3hu2r.gz
 C:\Users\49836040\TP06\obj\Debug\net9.0\compressed\ka9xf42kn5-t1cqhe9u97.gz
 C:\Users\49836040\TP06\obj\Debug\net9.0\compressed\d8wmx608j3-c2jlpeoesf.gz
 C:\Users\49836040\TP06\obj\Debug\net9.0\compressed\6z5jhr684k-sejl45xvog.gz
@@ -283,3 +282,4 @@ C:\Users\santi\TP06\obj\Debug\net9.0\swae.build.ex.cache
 C:\Users\santi\TP06\obj\Debug\net9.0\TP06.csproj.Up2Date
 C:\Users\santi\TP06\obj\Debug\net9.0\TP06.genruntimeconfig.cache
 C:\Users\santi\TP06\obj\Debug\net9.0\ref\TP06.dll
+C:\Users\49836040\TP06\obj\Debug\net9.0\compressed\myogmasy63-fa7zy8g6s7.gz

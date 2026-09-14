@@ -4,7 +4,7 @@ using Microsoft.Data.SqlClient;
 using Dapper;
 public class BD
 {
-    private string conexion = @"Server=COMPUDESANTINO\SQLEXPRESS;DataBase=TP06; Integrated Security=True; TrustServerCertificate=True;";
+    private string conexion = @"Server=LocalHost;DataBase=TP06; Integrated Security=True; TrustServerCertificate=True;";
     public void agregarJugador(Jugador j)
     {
         string query = "INSERT INTO Jugador (Nombre,Apellido,Usuario,Clave,Email,Vidas,Progreso) VALUES (@Nombre,@Apellido,@Usuario,@Clave,@Email,@Vidas,@Progreso)";
@@ -23,14 +23,16 @@ public class BD
         }
     }
     public List<Sala> ObtenerSalas()
-    {
-        string query = "SELECT * FROM Sala ORDER BY Nivel";
+{
+    string query = "SELECT * FROM Sala ORDER BY Nivel";
 
-        using (SqlConnection connection = new SqlConnection(conexion))
-        {
-            return connection.Query<Sala>(query).ToList();
-        }
+    using (SqlConnection connection = new SqlConnection(conexion))
+    {
+        return connection.Query<Sala>(query).ToList();
     }
+}
+
+   
      public Jugador encontrarUsuario(string Usuario, string Clave)
     {
         string query = "SELECT IdJugador, Nombre, Apellido, Usuario, Clave, Email FROM Jugador WHERE Usuario = @Usuario AND clave = @Clave";
@@ -48,7 +50,7 @@ public class BD
             return connection.QueryFirstOrDefault<Jugador>(query, new { Usuario });
         }
     }
-    public void actualizarEstado(int id)
+  public void actualizarEstado(int id)
 {
     string query = "UPDATE Sala SET Estado = 0 WHERE SalaId = @id";
 

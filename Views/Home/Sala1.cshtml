@@ -32,14 +32,15 @@
             <div class="room-section">
                 <h2>El Desafío</h2>
                 <p>¿Qué componente falta?</p>
-                <form>
-                    <input type="text" class="room-input" placeholder="Escribe tu respuesta aquí">
-                    <div class="room-actions">
-                    <button class="room-button">Verificar Respuesta</button>
-                </div>
-                </form>
-                
-                
+              <form action="@Url.Action("ComprobarRespuesta", "Home")" method="post">
+                <input type="hidden" name="ID" value="1">
+
+             <input type="text" name="respuesta" class="room-input" placeholder="Escribe tu respuesta aquí">
+
+             <div class="room-actions">
+             <button type="submit" class="room-button">Verificar Respuesta</button>
+             </div>
+            </form>   
             </div>
 
             <p class="room-tip">Pista: Sin este componente, no hay lugar donde guardar tus datos de forma permanente.</p>

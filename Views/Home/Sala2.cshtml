@@ -31,11 +31,16 @@
 
                 <h2>La Pregunta</h2>
                 <p>¿Qué módulo tenés que colocar?</p>
+               <form action="@Url.Action("ComprobarRespuesta", "Home")" method="post">
+    <input type="hidden" name="ID" value="2">
 
-                <input type="text" class="room-input" placeholder="Escribe tu respuesta aquí">
-                <div class="room-actions">
-                    <button class="room-button">Verificar Respuesta</button>
-                </div>
+    <input type="text" name="respuesta" class="room-input" placeholder="Escribe tu respuesta aquí">
+
+    <div class="room-actions">
+        <button type="submit" class="room-button">Verificar Respuesta</button>
+    </div>
+</form>
+
             </div>
 
             <p class="room-tip">Pista: Debes sumar el módulo que coloques a los 8 GB que ya tienes.</p>
