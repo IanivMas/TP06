@@ -1,0 +1,184 @@
+@{
+	ViewData["Title"] = "Victoria";
+}
+
+<style>
+	.victory-page {
+		max-width: 900px;
+		margin: 0 auto;
+		padding: 1rem 0 3rem;
+	}
+
+	.victory-card {
+		position: relative;
+		overflow: hidden;
+		padding: clamp(2rem, 6vw, 4.5rem) clamp(1.5rem, 6vw, 4rem);
+		border: 1px solid rgba(34, 197, 94, 0.4);
+		border-radius: 1.5rem;
+		background: linear-gradient(145deg, rgba(15, 23, 42, 0.96), rgba(22, 101, 52, 0.28));
+		box-shadow: 0 22px 55px rgba(2, 6, 23, 0.5);
+		text-align: center;
+	}
+
+	.victory-card::before,
+	.victory-card::after {
+		position: absolute;
+		width: 180px;
+		height: 180px;
+		border: 1px solid rgba(34, 197, 94, 0.24);
+		border-radius: 50%;
+		content: "";
+	}
+
+	.victory-card::before {
+		top: -100px;
+		left: -70px;
+	}
+
+	.victory-card::after {
+		right: -70px;
+		bottom: -110px;
+	}
+
+	.victory-icon {
+		position: relative;
+		z-index: 1;
+		display: grid;
+		width: 5rem;
+		height: 5rem;
+		margin: 0 auto 1.25rem;
+		place-items: center;
+		border: 2px solid #86efac;
+		border-radius: 50%;
+		background: rgba(34, 197, 94, 0.15);
+		color: #bbf7d0;
+		font-size: 2.4rem;
+		font-weight: 700;
+	}
+
+	.victory-label {
+		position: relative;
+		z-index: 1;
+		margin-bottom: 0.5rem;
+		color: #86efac;
+		font-size: 0.8rem;
+		font-weight: 700;
+		letter-spacing: 0.18em;
+		text-transform: uppercase;
+	}
+
+	.victory-title {
+		position: relative;
+		z-index: 1;
+		margin-bottom: 1rem;
+		color: #f0fdf4;
+		font-size: clamp(3.5rem, 12vw, 8rem);
+		line-height: 0.95;
+		letter-spacing: 0.04em;
+	}
+
+	.victory-message {
+		position: relative;
+		z-index: 1;
+		max-width: 600px;
+		margin: 0 auto;
+		color: #d1fae5;
+		font-size: clamp(1rem, 2vw, 1.25rem);
+	}
+
+	.victory-details {
+		position: relative;
+		z-index: 1;
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 0.85rem;
+		margin: 2.5rem 0;
+	}
+
+	.victory-detail {
+		padding: 1rem 0.75rem;
+		border: 1px solid rgba(134, 239, 172, 0.2);
+		border-radius: 0.85rem;
+		background: rgba(15, 23, 42, 0.48);
+	}
+
+	.victory-detail strong {
+		display: block;
+		margin-bottom: 0.35rem;
+		color: #f0fdf4;
+		font-size: 1.2rem;
+	}
+
+	.victory-detail span {
+		color: #a7f3d0;
+		font-size: 0.78rem;
+		text-transform: uppercase;
+	}
+
+	.victory-actions {
+		position: relative;
+		z-index: 1;
+		display: flex;
+		justify-content: center;
+		gap: 0.85rem;
+		flex-wrap: wrap;
+	}
+
+	.victory-actions .dashboard-actions {
+		margin: 0;
+	}
+
+	.victory-actions form {
+		margin: 0;
+		padding: 0;
+		background: transparent;
+		border: none;
+		box-shadow: none;
+	}
+
+	@@media (max-width: 600px) {
+		.victory-details {
+			grid-template-columns: 1fr;
+			margin: 2rem 0;
+		}
+	}
+</style>
+
+<div class="victory-page">
+	<section class="victory-card" aria-labelledby="victory-title">
+		<div class="victory-icon" aria-hidden="true">✓</div>
+		<p class="victory-label">Misión completada</p>
+		<h1 id="victory-title" class="victory-title">VICTORIA</h1>
+		<p class="victory-message">
+			¡Lo lograron! El equipo resolvió los enigmas, encontró la clave final y escapó de la sala a tiempo.
+		</p>
+
+		<div class="victory-details">
+			<div class="victory-detail">
+				<strong>100%</strong>
+				<span>Desafío superado</span>
+			</div>
+			<div class="victory-detail">
+				<strong>Equipo unido</strong>
+				<span>Trabajo en equipo</span>
+			</div>
+			<div class="victory-detail">
+				<strong>Clave final</strong>
+				<span>Misterio resuelto</span>
+			</div>
+		</div>
+
+		<div class="victory-actions">
+			<div class="dashboard-actions" style="margin-bottom: 2rem;">
+				<form action="@Url.Action("PaginaPrincipal", "Home")" method="get">
+					<input type="submit" name="inicio" value="Volver al inicio" />
+				</form>
+			</div>
+			<div class="dashboard-actions" style="margin-bottom: 2rem;">
+				<form action="@Url.Action("Historia", "Home")" method="get">
+					<input type="submit" name="historia" value="Conocer la historia" />
+				</form>
+			</div>
+		</div>
+	</section>
+</div>

@@ -81,24 +81,74 @@ public IActionResult InicioSesion(string Usuario, string Clave)
         ViewBag.Salas = bd.ObtenerSalas();
         return View();
     }
-    public IActionResult Sala(int id)
+
+    public IActionResult Historia()
     {
+        return View();
+    }
+    
+   
+    public IActionResult Sala(int id)
+{
+    BD bd = new BD();
+
+    if (id == 7)
+    {
+        List<Sala> salas = bd.ObtenerSalas();
+
+        foreach (Sala sala in salas)
+        {
+            if (sala.SalaId <= 6 && sala.Estado == true)
+            {
+                return RedirectToAction("PaginaPrincipal", "Home");
+            }
+        }
+    }
+
     string nombreVista = "Sala" + id;
 
     return View(nombreVista);
+}
+[HttpPost]
+public IActionResult ComprobarRespuesta(int ID, string respuesta)
+{
+    BD bd = new BD();
+
+    Sala sala = bd.ObtenerSala(ID);
+
+    if (sala.Correcta == respuesta)
+    {
+        bd.actualizarEstado(ID);
+
+        return RedirectToAction("PaginaPrincipal", "Home");
     }
-     public IActionResult ComprobarRespuesta(int ID, string respuesta)
-     {
-        Sala sala = bd.ObtenerSala(ID);
-        if(sala.correcta = respuesta)
-        {
-            bd.actualizarEstado(ID);
-        }
-        else
-        {
-            
-        }
-     }
+    else
+    {
+        return RedirectToAction("Sala", "Home", new { id = ID });
+    }
+}
+public IActionResult Victoria(int id, string respuesta)
+{
+    BD bd = new BD();
+
+    Sala sala = bd.ObtenerSala(id);
+
+    if (sala.Correcta == respuesta)
+    {
+        bd.actualizarEstado(id);
+        return RedirectToAction("Victoria", "Home");
+    }
+    else
+    {
+        return RedirectToAction("Sala", new { id = id });
+    }
+}
+
+    public IActionResult CerrarSesion()
+    {
+        HttpContext.Session.Clear();
+        return RedirectToAction("InicioSesion", "Home");
+    }
     public IActionResult Privacy()
     {
         return View();
