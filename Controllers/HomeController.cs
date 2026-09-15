@@ -92,18 +92,19 @@ public IActionResult InicioSesion(string Usuario, string Clave)
 {
     BD bd = new BD();
 
-    if (id == 7)
-    {
-        List<Sala> salas = bd.ObtenerSalas();
-
-        foreach (Sala sala in salas)
+        string usuario = HttpContext.Session.GetString("usuario");
+        if (string.IsNullOrEmpty(usuario))
         {
-            if (sala.SalaId <= 6 && sala.Estado == true)
-            {
-                return RedirectToAction("PaginaPrincipal", "Home");
-            }
+            return RedirectToAction("InicioSesion", "Home");
         }
-    }
+
+        Jugador jugador = bd.buscarPorNombreUsuario(usuario);
+        double progreso = jugador.Progreso;
+
+        if (id == 7 && progreso < 6)
+        {
+            return RedirectToAction("PaginaPrincipal", "Home");
+        }
 
     string nombreVista = "Sala" + id;
 
@@ -113,12 +114,19 @@ public IActionResult InicioSesion(string Usuario, string Clave)
 public IActionResult ComprobarRespuesta(int ID, string respuesta)
 {
     BD bd = new BD();
+    string usuario = HttpContext.Session.GetString("usuario");
+
+    if (string.IsNullOrEmpty(usuario))
+    {
+        return RedirectToAction("InicioSesion", "Home");
+    }
 
     Sala sala = bd.ObtenerSala(ID);
 
     if (sala.Correcta == respuesta)
     {
         bd.actualizarEstado(ID);
+        bd.actualizarProgreso(usuario, ID);
         return RedirectToAction("PaginaPrincipal", "Home");
     }
     else
@@ -130,9 +138,17 @@ public IActionResult ComprobarRespuesta(int ID, string respuesta)
     public IActionResult Victoria(string respuesta)
 {
     BD bd = new BD();
+    string usuario = HttpContext.Session.GetString("usuario");
+
+    if (string.IsNullOrEmpty(usuario))
+    {
+        return RedirectToAction("InicioSesion", "Home");
+    }
+
     Sala sala = bd.ObtenerSala(7);
     if (sala.Correcta == respuesta)
     {
+        bd.actualizarProgreso(usuario, 7);
         return View("Victoria");
     }
     else

@@ -8,7 +8,6 @@ public class Jugador
     public string Clave { get; set; }
     public string Nombre { get; set; }
     public string Email { get; set; }
-    public int Vidas { get; set; }
     public double Progreso { get; set; }
     public string Apellido { get; set; }
     public Jugador(int idJugador, string usuario, string email, string clave, string nombre, string apellido)
@@ -18,7 +17,6 @@ public class Jugador
         Clave = clave;
         Nombre = nombre;
         Email = email;
-        Vidas = 3;
         Progreso = 0;
         Apellido = apellido;
     }
