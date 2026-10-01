@@ -1,3 +1,4 @@
+
 @{
     ViewData["Title"] = "Nivel 2 - Sala de Escape";
 }
@@ -31,16 +32,21 @@
 
                 <h2>La Pregunta</h2>
                 <p>¿Qué módulo tenés que colocar?</p>
-               <form action="@Url.Action("ComprobarRespuesta", "Home")" method="post">
-    <input type="hidden" name="ID" value="2">
 
-    <input type="text" name="respuesta" class="room-input" placeholder="Escribe tu respuesta aquí">
+                <form action="@Url.Action("ComprobarRespuesta", "Home")" method="post">
+                    <input type="hidden" name="ID" value="2">
 
-    <div class="room-actions">
-        <button type="submit" class="room-button">Verificar Respuesta</button>
-    </div>
-</form>
+                    <input type="text" name="respuesta" class="room-input" placeholder="Escribe tu respuesta aquí">
 
+                    <div class="room-actions">
+                        <button type="submit" class="room-button">Verificar Respuesta</button>
+                    </div>
+                </form>
+
+                @if (ViewBag.Error != null)
+                {
+                    <p class="error-message">@ViewBag.Error</p>
+                }
             </div>
 
             <p class="room-tip">Pista: Debes sumar el módulo que coloques a los 8 GB que ya tienes.</p>

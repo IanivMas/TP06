@@ -129,10 +129,11 @@ public IActionResult ComprobarRespuesta(int ID, string respuesta)
         bd.actualizarProgreso(usuario, ID);
         return RedirectToAction("PaginaPrincipal", "Home");
     }
-    else
-    {
-        return RedirectToAction("Sala", "Home", new { id = ID });
-    }
+   else
+{
+    ViewBag.Error = "Respuesta incorrecta. Inténtalo de nuevo.";
+    return View("Sala" + ID);
+}
 }
 [HttpPost]
     public IActionResult Victoria(string respuesta)

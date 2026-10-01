@@ -28,15 +28,21 @@
             <div class="room-section">
                 <h2>La Pregunta</h2>
                 <p>¿Cuál es la solución correcta?</p>
+
                 <form action="@Url.Action("ComprobarRespuesta", "Home")" method="post">
-    <input type="hidden" name="ID" value="4">
+                    <input type="hidden" name="ID" value="4">
 
-    <input type="text" name="respuesta" class="room-input" placeholder="Escribe tu respuesta aquí">
+                    <input type="text" name="respuesta" class="room-input" placeholder="Escribe tu respuesta aquí">
 
-    <div class="room-actions">
-        <button type="submit" class="room-button">Verificar Respuesta</button>
-    </div>
-</form>
+                    <div class="room-actions">
+                        <button type="submit" class="room-button">Verificar Respuesta</button>
+                    </div>
+                </form>
+
+                @if (ViewBag.Error != null)
+                {
+                    <p class="error-message">@ViewBag.Error</p>
+                }
             </div>
 
             <p class="room-tip">Pista: El problema está relacionado con la temperatura, no con el almacenamiento ni la visualización.</p>
@@ -45,3 +51,4 @@
 
     <a class="room-back" href="@Url.Action("PaginaPrincipal", "Home")">← Volver a la página principal</a>
 </div>
+

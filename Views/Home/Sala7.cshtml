@@ -25,16 +25,21 @@
 
             <div class="room-section">
                 <p>Escribí el código final con guiones:</p>
+
                 <form action="@Url.Action("Victoria", "Home")" method="post">
-    <input type="hidden" name="ID" value="7">
+                    <input type="hidden" name="ID" value="7">
 
-    <input type="text" id="codigoFinal" name="respuesta" class="room-input" placeholder="SSD-16-RJ45-B-CPU-FUENTE" />
+                    <input type="text" id="codigoFinal" name="respuesta" class="room-input" placeholder="SSD-16-RJ45-B-CPU-FUENTE" />
 
-    <div class="room-actions">
-        <button type="submit" class="room-button">Comprobar</button>
-    </div>
-</form>
-                <p id="resultado" class="room-result"></p>
+                    <div class="room-actions">
+                        <button type="submit" class="room-button">Comprobar</button>
+                    </div>
+                </form>
+
+                @if (ViewBag.Error != null)
+                {
+                    <p class="error-message">@ViewBag.Error</p>
+                }
             </div>
         </div>
     </div>

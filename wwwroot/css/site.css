@@ -24,7 +24,12 @@ html {
   --success: #22c55e;
   --shadow: rgba(0, 0, 0, 0.28);
 }
-
+.error-message
+{
+  color: red;
+  font-weight: bold;
+  margin-top: 10px;
+}
 * {
   box-sizing: border-box;
 }

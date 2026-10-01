@@ -19,15 +19,21 @@
             <div class="room-section">
                 <h2>La Pregunta</h2>
                 <p>¿Quién soy?</p>
-              <form action="@Url.Action("ComprobarRespuesta", "Home")" method="post">
-    <input type="hidden" name="ID" value="5">
 
-    <input type="text" name="respuesta" class="room-input" placeholder="Escribe tu respuesta aquí">
+                <form action="@Url.Action("ComprobarRespuesta", "Home")" method="post">
+                    <input type="hidden" name="ID" value="5">
 
-    <div class="room-actions">
-        <button type="submit" class="room-button">Verificar Respuesta</button>
-    </div>
-</form>
+                    <input type="text" name="respuesta" class="room-input" placeholder="Escribe tu respuesta aquí">
+
+                    <div class="room-actions">
+                        <button type="submit" class="room-button">Verificar Respuesta</button>
+                    </div>
+                </form>
+
+                @if (ViewBag.Error != null)
+                {
+                    <p class="error-message">@ViewBag.Error</p>
+                }
             </div>
 
             <p class="room-tip">Pista: Sin mí, la computadora no puede pensar ni tomar decisiones.</p>
@@ -36,3 +42,4 @@
 
     <a class="room-back" href="@Url.Action("PaginaPrincipal", "Home")">← Volver a la página principal</a>
 </div>
+
